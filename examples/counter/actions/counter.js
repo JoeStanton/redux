@@ -1,34 +1,9 @@
-export const INCREMENT_COUNTER = 'INCREMENT_COUNTER'
-export const DECREMENT_COUNTER = 'DECREMENT_COUNTER'
+export const CHANGE_FIELD = 'CHANGE_FIELD'
 
-export function increment() {
+export function change(field, value) {
   return {
-    type: INCREMENT_COUNTER
-  }
-}
-
-export function decrement() {
-  return {
-    type: DECREMENT_COUNTER
-  }
-}
-
-export function incrementIfOdd() {
-  return (dispatch, getState) => {
-    const { counter } = getState()
-
-    if (counter % 2 === 0) {
-      return
-    }
-
-    dispatch(increment())
-  }
-}
-
-export function incrementAsync(delay = 1000) {
-  return dispatch => {
-    setTimeout(() => {
-      dispatch(increment())
-    }, delay)
+    type: CHANGE_FIELD,
+    field,
+    value
   }
 }
