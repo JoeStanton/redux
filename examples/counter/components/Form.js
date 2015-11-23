@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+// Returns a HoC wrapping a form. The container stores all state for the form, leaving all child components stateless.
+// Provides just one function, `field` used to set up correct bindings to form fields.
+
 const Form = (WrappedComponent) => {
   class WrapperForm extends Component {
     state = {}

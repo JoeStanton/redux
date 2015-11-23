@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react'
 import Messages from './Messages'
 
+// Small, easy to test stateless components
+
 const TextField = ({ label, name, hint, onChange, value, errors, required }) => {
   return (
     <div className="form-element">

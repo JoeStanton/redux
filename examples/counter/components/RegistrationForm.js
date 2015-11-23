@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import Form from './Form'
 import TextField from './TextField'
 
+// Decorate any plain react class with @Form to wrap it in a Form(Component) wrapper which owns the state.
+
 @Form
 class RegistrationForm extends Component {
+  // Can the validations be specified less verbosely? Typically the failure message is the same but sometimes we want to override it.
   static validations = {
     first_name: [
       { message: 'Must be the correct length', validate: (value) => value && value.length >= 3 }
@@ -37,6 +40,8 @@ class RegistrationForm extends Component {
   }
 }
 
+// Stateless component syntax
+// Not yet clear how to deal with nesting.
 let NestedForm = ({ field }) => {
   return (
     <TextField
